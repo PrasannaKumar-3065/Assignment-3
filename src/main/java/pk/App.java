@@ -13,7 +13,7 @@ class STUDENT{
     private static final Logger LOGGER =  Logger.getLogger("InfoLogging");
     static String name;
     char gradelevel;
-    float GPA;
+    float gpa;
 
     void grade(float GPA){
         if(GPA < 5){
