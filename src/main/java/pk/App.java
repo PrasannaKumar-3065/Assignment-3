@@ -1,6 +1,7 @@
 package pk;
 import java.util.*;
 import java.util.logging.*;
+import java.util.function.Supplier;
 /*3. Design a class for a student at a school. The class should have the following features:
          - Instance variables for the student's name, grade level, and GPA.
          - A constructor that allows the user to create a student with a given name, grade level, and GPA.
@@ -9,7 +10,7 @@ import java.util.logging.*;
 import java.util.logging.Logger;
 
 class STUDENT{
-    private static final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger LOGGER =  Logger.getLogger("InfoLogging");
     static String name;
     char gradelevel;
     float GPA;
@@ -24,14 +25,14 @@ class STUDENT{
         else if(GPA > 7){
             gradelevel = 'A';
         }
-        LOGGER.log(Level.INFO,String.format("Grade is %c",gradelevel));
+        LOGGER.info("Grade is "+gradelevel);
     }
     void update(float GPA){
         this.GPA = GPA;
         grade(GPA);
     }
     void display(){
-        LOGGER.log(Level.INFO,String.format("%s's GPA is %s",name,GPA));
+        LOGGER.info(name+"'s GPA is "+GPA);
     }
     STUDENT(String name, float GPA){
         this.name = name;
@@ -45,12 +46,12 @@ class STUDENT{
  */
 public class App 
 {
-    private static final Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Logger LOGGER =  Logger.getLogger("InfoLogging");
     static Scanner sc = new Scanner(System.in);
     public static void main( String[] args )
     {
         int n = 1;
-        LOGGER.log(Level.INFO,"Name:");
+        LOGGER.info("Enter Name: ");
         String name = sc.next();
         LOGGER.log(Level.INFO,"GPA:");
         float GPA = sc.nextFloat();
