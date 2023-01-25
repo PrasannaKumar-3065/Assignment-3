@@ -15,29 +15,29 @@ class STUDENT{
     char gradelevel;
     float gpa;
 
-    void grade(float GPA){
-        if(GPA < 5){
+    void grade(float gpa){
+        if(gpa < 5){
             gradelevel = 'F';
         }
-        else if(GPA >5 && GPA < 7){
+        else if(gpa >5 && gpa < 7){
             gradelevel = 'B';
         }
-        else if(GPA > 7){
+        else if(gpa > 7){
             gradelevel = 'A';
         }
         LOGGER.info("Grade is "+gradelevel);
     }
-    void update(float GPA){
-        this.GPA = GPA;
-        grade(GPA);
+    void update(float gpa){
+        this.gpa = gpa;
+        grade(gpa);
     }
     void display(){
-        LOGGER.info(name+"'s GPA is "+GPA);
+        LOGGER.info(name+"'s GPA is "+gpa);
     }
-    STUDENT(String name, float GPA){
+    STUDENT(String name, float gpa){
         this.name = name;
-        this.GPA = GPA;
-        grade(GPA);
+        this.gpa = gpa;
+        grade(gpa);
     }
 }
 /**
@@ -54,8 +54,8 @@ public class App
         LOGGER.info("Enter Name: ");
         String name = sc.next();
         LOGGER.log(Level.INFO,"GPA:");
-        float GPA = sc.nextFloat();
-        STUDENT s = new STUDENT(name,GPA);
+        float gpa = sc.nextFloat();
+        STUDENT s = new STUDENT(name,gpa);
         do{
             LOGGER.log(Level.INFO,"\n1.Display GPA 2.Edit GPA 3.Exit");
             int m = sc.nextInt();
@@ -64,8 +64,8 @@ public class App
             }
             else if(m==2){
                 LOGGER.log(Level.INFO,"Enter GPA: ");
-                GPA = sc.nextFloat();
-                s.update(GPA);
+                gpa = sc.nextFloat();
+                s.update(gpa);
             }
             else{
                 n = 0;
