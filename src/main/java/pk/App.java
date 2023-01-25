@@ -1,7 +1,6 @@
 package pk;
 import java.util.*;
 import java.util.logging.*;
-import java.util.function.Supplier;
 /*3. Design a class for a student at a school. The class should have the following features:
          - Instance variables for the student's name, grade level, and GPA.
          - A constructor that allows the user to create a student with a given name, grade level, and GPA.
@@ -32,7 +31,7 @@ class STUDENT{
         grade(gpa);
     }
     void display(){
-        LOGGER.info(name+"'s GPA is "+gpa);
+        LOGGER.info(String.format("%s's GPA is %c",name,gpa));
     }
     STUDENT(String name, float gpa){
         this.name = name;
