@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 class STUDENT{
     private static final Logger LOGGER =  Logger.getLogger("InfoLogging");
-    static String name;
+    String name;
     char gradelevel;
     float gpa;
 
