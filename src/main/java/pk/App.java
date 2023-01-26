@@ -31,7 +31,8 @@ class STUDENT{
         grade(gpa);
     }
     void display(){
-        LOGGER.info(name+"'s GPA is "+gpa);
+        String s = name+"'s GPA is "+gpa;
+        LOGGER.info(s);
     }
     STUDENT(String name, float gpa){
         this.name = name;
